@@ -46,7 +46,6 @@ program
 .action(function(q){
   var json2csv = require('json2csv');
   initCiviCRM ();
-  console.log(notice('export "%s"', q));
   crmAPI.get ('contact',{sort_name:q,'return':"id,sort_name,email,phone,organization_name"},
     function (result) {
       if (result.is_error) {
