@@ -10,7 +10,7 @@ than going to a browser, authenticating, going to /civicrm and type on the searc
 you can have several civicrm sites you can query
 
 ##installation
-$sudo npm -g install clicivi
+$sudo npm -g install civicrm-cli
 
 ##configuration
 The configuration file contains all the key and api_keys of your site and is stored in ~/.config/civicrm.json
