@@ -41,10 +41,23 @@ program
 
 program
   .option('-l, --limit', 'number of contacts to fetch (default 25)')
-.command('csv')
+.command('csv [search term]')
 .description('export the contacts as csv file')
-.action(function(env){
-  console.log(notice('export "%s"', env));
+.action(function(q){
+  var json2csv = require('json2csv');
+  initCiviCRM ();
+  console.log(notice('export "%s"', q));
+  crmAPI.get ('contact',{sort_name:q,'return':"id,sort_name,email,phone,organization_name"},
+    function (result) {
+      if (result.is_error) {
+        console.log(error("invalid result: "+result.error_message));
+        process.exit(1);
+      }
+      json2csv({data: result.values, fields: ['id', 'sort_name', 'email', 'organization_name']}, function(err, csv) {
+        if (err) console.log(err);
+        console.log (csv);
+    });
+  });
 });
 
 
@@ -85,11 +98,9 @@ program
         console.log(error("invalid result: "+result.error_message));
         process.exit(1);
       }
-      console.log(result.values);
-      for (var i in result.values) {
-        var val = result.values[i];
+      result.values.forEach(function(val) {
         console.log(val.id +": "+val.sort_name+ " "+val.email+ " "+ val.phone);
-      }
+      });
     });
 });
 

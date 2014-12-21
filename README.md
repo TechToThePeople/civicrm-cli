@@ -32,3 +32,5 @@ you can as well provide them from the command line
       +41 22 123 45 67
       demo@example.org
 
+    $civicrm -s example csv xavier > xavier.csv
+

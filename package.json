@@ -1,5 +1,6 @@
 {
   "name": "civicrm-cli",
+  "preferGlobal": "true",
   "version": "0.1.1",
   "description": "Command line interface to civicrm. moslty searches now",
   "main": "civicrm.js",
@@ -24,9 +25,10 @@
     "url": "https://github.com/TechToThePeople/clicivi/issues"
   },
   "dependencies": {
-    "civicrm": "^2.2.0",
+    "civicrm": "^2.2.2",
     "cli-color": "^0.3.2",
     "commander": "^2.5.1",
-    "prompt": "^0.2.14"
+    "prompt": "^0.2.14",
+    "json2csv": "^2.2.1"
   }
 }
