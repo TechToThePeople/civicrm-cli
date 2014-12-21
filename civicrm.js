@@ -218,7 +218,7 @@ function initCiviCRM () {
 
       }
       var c= config[program.site];
-      console.log (notice("using "+ program.site + " ("+c.server+")"));
+//      console.log (notice("using "+ program.site + " ("+c.server+")"));
       crmAPI = require('civicrm')(c);
     }
   } 
