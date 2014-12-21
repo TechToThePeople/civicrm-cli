@@ -1,0 +1,33 @@
+{
+  "name": "civicrm-cli",
+  "version": "0.1.0",
+  "description": "Command line interface to civicrm. moslty searches now",
+  "main": "civicrm.js",
+  "bin": {
+    "civicrm": "civicrm.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TechToThePeople/clicivi.git"
+  },
+  "keywords": [
+    "civicrm",
+    "crm",
+    "cli"
+  ],
+  "author": "xavier dutoit",
+  "license": "aGPL3",
+  "bugs": {
+    "url": "https://github.com/TechToThePeople/clicivi/issues"
+  },
+  "dependencies": {
+    "civicrm": "^2.2.0",
+    "cli-color": "^0.3.2",
+    "commander": "^2.5.1",
+    "node-yaml-config": "0.0.2",
+    "prompt": "^0.2.14"
+  }
+}
